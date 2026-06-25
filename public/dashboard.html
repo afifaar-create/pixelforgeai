@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | PixelForge AI</title>
+  <meta name="description" content="PixelForge AI dashboard for image generation, history, and profile overview.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <a href="index.html" class="brand">PixelForge AI</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="chat.html">Chat</a>
+        <a href="account.html">Account</a>
+        <a href="settings.html">Settings</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Dashboard</p>
+        <h1>Manage your AI workflow in one place.</h1>
+        <p>Monitor your recent image generations, access AI tools, and explore customization options from a clean dashboard interface.</p>
+      </div>
+
+      <div class="card generator">
+        <h2>Account summary</h2>
+        <p>Sign in on the Account page and return here to review your saved image generation history.</p>
+        <div class="form-row">
+          <p class="account-status" id="accountStatus">Sign in to load your history and profile data.</p>
+        </div>
+        <div class="form-row">
+          <button class="button primary" id="subscribeBtn" type="button">Subscribe</button>
+          <p class="account-status" id="subscriptionStatus">Subscription required for editing and upscaling.</p>
+        </div>
+        <div class="history-card">
+          <h3>Recent generation history</h3>
+          <ul class="history-list" id="historyList">
+            <li>No history loaded yet.</li>
+          </ul>
+        </div>
+        <div class="server-card">
+          <h3>Server system</h3>
+          <p id="serverStatus">Loading server system info…</p>
+          <ul class="server-info" id="serverInfoList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof">
+      <div class="proof-card">
+        <h3>Profile overview</h3>
+        <p>View your name, contact details, and account status.</p>
+      </div>
+      <div class="proof-card">
+        <h3>Generation history</h3>
+        <p>Track recent prompts, results, and downloads.</p>
+      </div>
+      <div class="proof-card">
+        <h3>Quick actions</h3>
+        <p>Start new image generation, open the AI chatbot, or apply upscaling with one click.</p>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div>
+        <span>© 2026 PixelForge AI</span>
+        <span>Mustafa • <a href="tel:+9696499236">9696499236</a></span>
+      </div>
+      <div>Professional AI tools for fast creative work.</div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

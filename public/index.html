@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelForge AI</title>
+  <meta name="description" content="Generate stunning AI images from text prompts with PixelForge AI. Fast, modern, and professional image creation for designers and creators.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <a href="index.html" class="brand">PixelForge AI</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="chat.html">Chat</a>
+        <a href="account.html">Account</a>
+        <a href="settings.html">Settings</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AI-Powered Product Suite</p>
+        <h1>Professional AI tools for image creation, chat, and dashboard workflows.</h1>
+        <p>PixelForge AI combines smart image generation, AI chat, and modern page navigation into one polished website.</p>
+        <div class="cta-group">
+          <a href="#generator" class="cta primary">Try the generator</a>
+          <a href="dashboard.html" class="cta secondary">Open dashboard</a>
+        </div>
+
+        <div class="profile-card">
+          <span class="badge">Profile</span>
+          <h2>Mustafa</h2>
+          <p>AI creator and product lead</p>
+          <p><a href="tel:+9696499236">9696499236</a></p>
+        </div>
+      </div>
+
+      <div class="card generator" id="generator">
+        <h2>Generate your next image</h2>
+        <p>Enter a prompt and watch PixelForge AI build a high-resolution preview instantly.</p>
+        <div class="form-row">
+          <textarea id="prompt" placeholder="e.g. futuristic city skyline at sunset, cinematic lighting" rows="4"></textarea>
+          <div class="field-row">
+            <label for="imageCount">Images</label>
+            <select id="imageCount">
+              <option value="1">1 image</option>
+              <option value="2">2 images</option>
+              <option value="3">3 images</option>
+              <option value="4">4 images</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label for="imageMode">Mode</label>
+            <select id="imageMode">
+              <option value="generate">Standard</option>
+              <option value="edit">Image editing</option>
+              <option value="upscale">Upscale</option>
+            </select>
+          </div>
+          <div class="actions">
+            <button class="button primary" id="generateBtn" type="button">Generate Image</button>
+            <button class="button secondary" id="downloadBtn" type="button" disabled>Download</button>
+          </div>
+          <p class="status" id="statusText">Ready to generate your first image.</p>
+        </div>
+
+        <div class="preview">
+          <div class="preview-card" id="previewCard">
+            <div class="placeholder" id="previewPlaceholder">
+              Your generated image preview will appear here.
+            </div>
+            <img id="output" alt="Generated preview" hidden>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <h2>Professional Features</h2>
+      <div class="feature-grid">
+        <div class="feature-item"><span>✅</span><p>Image generation</p></div>
+        <div class="feature-item"><span>✅</span><p>AI chatbot</p></div>
+        <div class="feature-item"><span>✅</span><p>Multiple image generation</p></div>
+        <div class="feature-item"><span>✅</span><p>Image upscaling</p></div>
+        <div class="feature-item"><span>✅</span><p>Image upscaling</p></div>
+        <div class="feature-item"><span>✅</span><p>Image editing</p></div>
+      </div>
+    </section>
+
+    <section class="proof" id="highlights">
+      <div class="proof-card">
+        <h3>Responsive mobile design</h3>
+        <p>Works beautifully on phones, tablets, and desktop screens.</p>
+      </div>
+      <div class="proof-card">
+        <h3>Dashboard experience</h3>
+        <p>Easy access to settings, history, and workflow tools.</p>
+      </div>
+      <div class="proof-card">
+        <h3>Complete page set</h3>
+        <p>Includes Contact, About, Terms, and Privacy landing pages.</p>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div>
+        <span>© 2026 PixelForge AI</span>
+        <span>Built for creators who want professional visuals fast.</span>
+      </div>
+      <div>
+        <strong>Contact:</strong> Mustafa • <a href="tel:+9696499236">9696499236</a>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

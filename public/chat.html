@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat | PixelForge AI</title>
+  <meta name="description" content="AI chatbot powered by OpenAI within PixelForge AI.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <a href="index.html" class="brand">PixelForge AI</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="account.html">Account</a>
+        <a href="settings.html">Settings</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AI Chat</p>
+        <h1>Chat with your AI assistant.</h1>
+        <p>Ask questions, get creative prompts, or brainstorm ideas using open AI chat directly in the app.</p>
+      </div>
+
+      <div class="card generator">
+        <h2>Chat interface</h2>
+        <div class="form-row">
+          <textarea id="chatInput" placeholder="Ask anything..." rows="4"></textarea>
+          <div class="actions">
+            <button class="button primary" id="sendChatBtn" type="button">Send Message</button>
+          </div>
+          <p class="status" id="chatStatusText">Start a conversation with your AI assistant.</p>
+        </div>
+
+        <div class="chat-panel">
+          <div class="chat-history" id="chatHistory">
+            <div class="chat-item chat-system">
+              <p>Welcome! Use the chat to ask for image ideas, editing tips, or creative direction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div>
+        <span>© 2026 PixelForge AI</span>
+        <span>Mustafa • <a href="tel:+9696499236">9696499236</a></span>
+      </div>
+      <div>Professional AI tools for fast creative work.</div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
