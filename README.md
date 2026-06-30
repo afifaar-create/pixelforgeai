@@ -18,9 +18,9 @@ A professional AI image generation website with user accounts, history, and mode
    npm install
    ```
 
-2. Create a `.env` file containing your OpenAI API key:
+2. Create a `.env` file containing your Gemini API key:
    ```bash
-   OPENAI_API_KEY=your_api_key_here
+   GEMINI_API_KEY=your_api_key_here
    ```
 
 3. Start the server:
@@ -40,7 +40,7 @@ This app is configured for deployment on Render.
 2. Connect your repository.
 3. Set the build command to `npm install`.
 4. Set the start command to `npm start`.
-5. Add `OPENAI_API_KEY` as a secret environment variable.
+5. Add `GEMINI_API_KEY` as a secret environment variable.
 6. Deploy and use the generated public URL.
 
 ## Notes

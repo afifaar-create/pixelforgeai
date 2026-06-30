@@ -1,128 +1,493 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PixelForge AI</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7681190940636092"
-     crossorigin="anonymous"></script>
-  <meta name="description" content="Generate stunning AI images from text prompts with PixelForge AI. Fast, modern, and professional image creation for designers and creators.">
+  <title>Mustafa's PixelForge AI</title>
+  <meta name="description" content="Compact AI image generation and chat experience for creators, managed by Mustafa. Contact: 9696499236.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#020617">
+  <link rel="canonical" href="https://pixelforge.ai/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            skyglow: '#4f8fff',
+            violetglow: '#8b5cf6',
+            cyanlight: '#22d3ee',
+            blackglass: '#020617'
+          },
+          boxShadow: {
+            glow: '0 20px 60px rgba(79, 132, 255, 0.2)',
+            glowStrong: '0 30px 90px rgba(56, 189, 248, 0.18)'
+          },
+          backgroundImage: {
+            'hero-grid': 'radial-gradient(circle at top left, rgba(79, 132, 255, 0.15), transparent 22%), radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.18), transparent 24%), radial-gradient(circle at 50% 70%, rgba(34, 211, 238, 0.1), transparent 30%)'
+          }
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PixelForge AI - AI Image Generator">
+  <meta property="og:description" content="Transform ideas into stunning AI art with PixelForge AI. Fast, futuristic, and premium image generation for creators.">
+  <meta property="og:url" content="https://pixelforge.ai/">
+  <meta property="og:site_name" content="PixelForge AI">
+  <meta property="og:image" content="https://pixelforge.ai/favicon.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PixelForge AI - AI Image Generator">
+  <meta name="twitter:description" content="Transform ideas into stunning AI art with PixelForge AI. Fast, futuristic, and premium image generation for creators.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "PixelForge AI",
+        "url": "https://pixelforge.ai/",
+        "logo": "https://pixelforge.ai/favicon.svg",
+        "sameAs": [
+          "https://twitter.com/pixelforgeai",
+          "https://www.linkedin.com/company/pixelforgeai"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://pixelforge.ai/",
+        "name": "PixelForge AI",
+        "description": "Transform ideas into stunning AI art with PixelForge AI.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "PixelForge AI"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pixelforge.ai/"}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-<body>
-  <div class="page">
-    <header class="header">
-      <a href="index.html" class="brand">PixelForge AI</a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="dashboard.html">Dashboard</a>
-        <a href="chat.html">Chat</a>
-        <a href="account.html">Account</a>
-        <a href="settings.html">Settings</a>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About</a>
-        <a href="terms.html">Terms</a>
-        <a href="privacy.html">Privacy</a>
-      </nav>
-    </header>
-
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">AI-Powered Product Suite</p>
-        <h1>Professional AI tools for image creation, chat, and dashboard workflows.</h1>
-        <p>PixelForge AI combines smart image generation, AI chat, and modern page navigation into one polished website.</p>
-        <div class="cta-group">
-          <a href="#generator" class="cta primary">Try the generator</a>
-          <a href="dashboard.html" class="cta secondary">Open dashboard</a>
-        </div>
-
-        <div class="profile-card">
-          <span class="badge">Profile</span>
-          <h2>Mustafa</h2>
-          <p>AI creator and product lead</p>
-          <p><a href="tel:+9696499236">9696499236</a></p>
-        </div>
-      </div>
-
-      <div class="card generator" id="generator">
-        <h2>Generate your next image</h2>
-        <p>Enter a prompt and watch PixelForge AI build a high-resolution preview instantly.</p>
-        <div class="form-row">
-          <textarea id="prompt" placeholder="e.g. futuristic city skyline at sunset, cinematic lighting" rows="4"></textarea>
-          <div class="field-row">
-            <label for="imageCount">Images</label>
-            <select id="imageCount">
-              <option value="1">1 image</option>
-              <option value="2">2 images</option>
-              <option value="3">3 images</option>
-              <option value="4">4 images</option>
-            </select>
+<body class="bg-[#020617] text-slate-100 antialiased">
+  <div class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 bg-hero-grid opacity-70"></div>
+    <div class="pointer-events-none absolute left-1/2 top-1/3 h-72 w-72 -translate-x-1/2 rounded-full bg-violetglow/20 blur-3xl"></div>
+    <div class="pointer-events-none absolute right-0 top-1/4 h-56 w-56 rounded-full bg-cyanlight/20 blur-3xl"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 py-6 sm:px-8 lg:px-12">
+      <header class="flex flex-wrap items-center justify-between gap-4 py-4">
+        <a class="inline-flex items-center gap-3 text-white" href="/">
+          <span class="grid h-12 w-12 place-items-center rounded-3xl bg-gradient-to-br from-skyglow to-violetglow text-lg font-black text-slate-950 shadow-glow">PF</span>
+          <div>
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-400">PixelForge AI</p>
+            <p class="text-xs text-slate-500">Futuristic image creation</p>
           </div>
-          <div class="field-row">
-            <label for="imageMode">Mode</label>
-            <select id="imageMode">
-              <option value="generate">Standard</option>
-              <option value="edit">Image editing</option>
-              <option value="upscale">Upscale</option>
-            </select>
-          </div>
-          <div class="actions">
-            <button class="button primary" id="generateBtn" type="button">Generate Image</button>
-            <button class="button secondary" id="downloadBtn" type="button" disabled>Download</button>
-          </div>
-          <p class="status" id="statusText">Ready to generate your first image.</p>
-        </div>
+        </a>
+        <button id="navToggle" class="nav-toggle rounded-2xl border border-white/10 bg-slate-950/80 p-3 text-slate-300 transition hover:border-skyglow/40 hover:text-white lg:hidden" aria-label="Toggle navigation" aria-expanded="false">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <nav id="primaryNav" class="primary-nav hidden w-full flex-col gap-4 lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 text-sm text-slate-300">
+          <a href="#home" class="transition hover:text-white">Home</a>
+          <a href="#gallery" class="transition hover:text-white">Gallery</a>
+          <a href="#pricing" class="transition hover:text-white">Pricing</a>
+          <a href="about.html" class="transition hover:text-white">About</a>
+          <a href="contact.html" class="transition hover:text-white">Contact</a>
+          <button id="donateNavBtn" class="rounded-full bg-gradient-to-r from-skyglow to-cyanlight px-4 py-2 text-xs font-semibold text-slate-950 transition hover:shadow-glow">Donate</button>
+        </nav>
+      </header>
 
-        <div class="preview">
-          <div class="preview-card" id="previewCard">
-            <div class="placeholder" id="previewPlaceholder">
-              Your generated image preview will appear here.
+      <main class="grid gap-8 pb-16 pt-6 sm:gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:gap-16 lg:pb-20 lg:pt-8">
+        <section id="home" class="space-y-6 sm:space-y-8">
+          <div class="max-w-2xl space-y-4 sm:space-y-5">
+            <p class="inline-flex rounded-full border border-slate-700 bg-white/5 px-3 py-2 text-[11px] uppercase tracking-[0.25em] text-slate-300 shadow-glow sm:px-4 sm:text-xs">Managed by Mustafa • +9696499236</p>
+            <h1 class="text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-5xl lg:text-7xl">Compact AI Art Studio for Fast Creative Results</h1>
+            <p class="max-w-xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">PixelForge AI turns prompts into polished visuals quickly, with a compact layout that works smoothly for online deployment and everyday use.</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="contact.html" class="inline-flex items-center justify-center rounded-full border border-skyglow/30 bg-skyglow/10 px-4 py-2 text-sm font-medium text-skyglow transition hover:bg-skyglow/20">Contact Mustafa</a>
+              <a href="chat.html" class="inline-flex items-center justify-center rounded-full border border-white/10 bg-slate-950/80 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-cyanlight/30 hover:text-white">Open AI chat</a>
             </div>
-            <img id="output" alt="Generated preview" hidden>
+          </div>
+
+          <div class="grid gap-4 rounded-[24px] border border-white/10 bg-white/5 p-4 shadow-glow backdrop-blur-xl sm:rounded-[32px] sm:p-5 lg:p-6">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p class="text-sm uppercase tracking-[0.24em] text-slate-400">Type your vision</p>
+              <span class="rounded-full bg-slate-900 px-3 py-2 text-[11px] uppercase tracking-[0.28em] text-cyanlight/90 sm:px-4 sm:text-xs">Fast. Premium. Infinite.</span>
+            </div>
+            <div class="grid gap-3 sm:gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+              <input id="promptInput" class="min-h-[60px] rounded-2xl border border-white/10 bg-slate-950/90 px-4 py-4 text-base text-slate-100 outline-none transition duration-300 focus:border-skyglow focus:ring-4 focus:ring-skyglow/10 sm:min-h-[72px] sm:rounded-3xl sm:px-5 sm:py-5 sm:text-lg" placeholder="e.g. surreal city skyline with magnetic neon lights" />
+              <button id="generateBtn" class="group relative inline-flex min-h-[60px] items-center justify-center rounded-2xl bg-gradient-to-r from-skyglow via-violetglow to-cyanlight px-6 py-3 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:shadow-glowStrong focus:outline-none sm:min-h-[72px] sm:rounded-3xl sm:px-10 sm:text-base">Generate image</button>
+            </div>
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div class="flex flex-wrap gap-2 sm:gap-3">
+                <label class="flex items-center gap-2 rounded-2xl border border-white/10 bg-slate-950/80 px-3 py-2 text-sm text-slate-300">
+                  <span>Count</span>
+                  <select id="imageCount" class="bg-transparent text-slate-100 outline-none">
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </label>
+                <label class="flex items-center gap-2 rounded-2xl border border-white/10 bg-slate-950/80 px-3 py-2 text-sm text-slate-300">
+                  <span>Style</span>
+                  <select id="imageStyle" class="bg-transparent text-slate-100 outline-none">
+                    <option value="Modern" selected>Modern</option>
+                    <option value="Cinematic">Cinematic</option>
+                    <option value="Photoreal">Photoreal</option>
+                    <option value="Illustration">Illustration</option>
+                    <option value="Abstract">Abstract</option>
+                  </select>
+                </label>
+              </div>
+              <button id="downloadBtn" type="button" class="rounded-2xl border border-cyanlight/30 bg-cyanlight/10 px-4 py-2 text-sm font-semibold text-cyanlight transition hover:bg-cyanlight/20 disabled:cursor-not-allowed disabled:opacity-50">Download</button>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button id="enhancePromptBtn" type="button" class="rounded-full border border-skyglow/30 bg-skyglow/10 px-3 py-2 text-sm font-medium text-skyglow transition hover:bg-skyglow/20">✨ Enhance prompt</button>
+              <span class="rounded-full border border-white/10 bg-slate-950/80 px-3 py-2 text-sm text-slate-300">10k+ images created</span>
+              <span class="rounded-full border border-white/10 bg-slate-950/80 px-3 py-2 text-sm text-slate-300">No credit card needed</span>
+              <span class="rounded-full border border-white/10 bg-slate-950/80 px-3 py-2 text-sm text-slate-300">Secure by design</span>
+            </div>
+            <p id="statusText" class="text-sm text-slate-400">Enter a creative prompt and watch PixelForge AI render your next masterpiece.</p>
+            <div class="mt-1 overflow-hidden rounded-[24px] border border-white/10 bg-slate-950/80 sm:rounded-[28px]">
+              <img id="outputImage" hidden alt="Generated preview" class="h-64 w-full object-cover sm:h-72" />
+              <div id="previewPlaceholder" class="flex h-64 items-center justify-center px-6 text-center text-sm leading-6 text-slate-400 sm:h-72">Your generated artwork will appear here.</div>
+            </div>
+            <div id="generatedGallery" class="grid gap-3 sm:grid-cols-2"></div>
+            <div class="rounded-[20px] border border-white/10 bg-slate-950/80 p-3 sm:rounded-[24px] sm:p-4">
+              <div class="mb-3 flex items-center justify-between gap-2">
+                <h3 class="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">Recent creations</h3>
+                <span class="text-[11px] text-slate-500">Stored locally</span>
+              </div>
+              <div id="historyEmptyState" class="text-sm text-slate-400">Your latest prompts and favorites will appear here.</div>
+              <div id="historyList" class="space-y-2"></div>
+            </div>
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div class="glass-card relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
+              <p class="text-sm uppercase tracking-[0.24em] text-slate-400">Featured output</p>
+              <h2 class="mt-3 text-2xl font-semibold text-white">AI-generated image showcase</h2>
+              <p class="mt-3 text-sm leading-6 text-slate-300">Review the latest outputs that combine ultra high fidelity lighting, dynamic color, and cinematic composition.</p>
+              <div class="mt-6 overflow-hidden rounded-[28px] border border-white/10 bg-slate-950/80">
+                <img src="https://images.unsplash.com/photo-1529191102341-8ff8d7d34d93?auto=format&fit=crop&w=1200&q=80" alt="AI generated preview" class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" />
+              </div>
+            </div>
+            <div class="grid gap-5">
+              <div class="glass-card rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
+                <p class="text-sm uppercase tracking-[0.24em] text-slate-400">Ultra-fast processing</p>
+                <h3 class="mt-3 text-xl font-semibold text-white">Render in seconds</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-300">Our optimized engine delivers premium visuals without slowdowns.</p>
+              </div>
+              <div class="glass-card rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
+                <p class="text-sm uppercase tracking-[0.24em] text-slate-400">Adaptive creativity</p>
+                <h3 class="mt-3 text-xl font-semibold text-white">Style control at scale</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-300">Choose between cinematic, photoreal, illustration, or custom art directions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="relative overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-b from-slate-950/90 via-slate-950/70 to-slate-950/20 p-6 shadow-glow backdrop-blur-xl sm:p-8">
+          <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-cyanlight/20 via-transparent to-transparent"></div>
+          <div class="absolute right-6 top-8 h-24 w-24 rounded-full bg-violetglow/30 blur-3xl"></div>
+          <div class="relative z-10 grid gap-6">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <p class="text-sm uppercase tracking-[0.22em] text-slate-400">Live showcase</p>
+                <h2 class="mt-3 text-3xl font-semibold text-white">PixelForge Highlights</h2>
+              </div>
+              <span class="rounded-full bg-slate-900/80 px-4 py-2 text-xs uppercase tracking-[0.24em] text-slate-300">AI Studio</span>
+            </div>
+            <div class="grid gap-4 rounded-[32px] border border-white/10 bg-slate-950/90 p-4">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80" alt="AI hero image" class="h-72 w-full rounded-[28px] object-cover object-center shadow-glowStrong transition duration-700 hover:scale-[1.02]" />
+            </div>
+            <div class="grid gap-3 rounded-[28px] border border-white/10 bg-slate-950/90 p-5">
+              <div class="flex items-center justify-between text-sm text-slate-400">
+                <span>Resolution</span>
+                <span>1024×1024</span>
+              </div>
+              <div class="flex items-center justify-between text-sm text-slate-400">
+                <span>Style</span>
+                <span class="text-white">Neon Futurism</span>
+              </div>
+              <div class="flex items-center justify-between text-sm text-slate-400">
+                <span>Speed</span>
+                <span class="text-white">Instant</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <section class="space-y-10 py-10">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="section-label">Features</p>
+            <h2 class="text-4xl font-semibold text-white sm:text-5xl">The AI engine built for modern creators</h2>
+          </div>
+          <p class="max-w-xl text-sm leading-7 text-slate-400">Everything you need to go from prompt to professional artwork with ease, speed, and premium quality.</p>
+        </div>
+        <div class="grid gap-5 lg:grid-cols-3">
+          <article class="glass-card rounded-[32px] border border-white/10 p-7 shadow-glow backdrop-blur-xl transition hover:-translate-y-1 hover:border-skyglow/40">
+            <span class="inline-flex rounded-2xl bg-slate-900/80 px-3 py-2 text-xs uppercase tracking-[0.28em] text-skyglow">Text-to-Image</span>
+            <h3 class="mt-5 text-2xl font-semibold text-white">Text-to-Image Generation</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">Produce rich visuals from simple prompts with high fidelity color, detail, and composition.</p>
+          </article>
+          <article class="glass-card rounded-[32px] border border-white/10 p-7 shadow-glow backdrop-blur-xl transition hover:-translate-y-1 hover:border-skyglow/40">
+            <span class="inline-flex rounded-2xl bg-slate-900/80 px-3 py-2 text-xs uppercase tracking-[0.28em] text-skyglow">Speed</span>
+            <h3 class="mt-5 text-2xl font-semibold text-white">Ultra-Fast Processing</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">Generate art in seconds with a performant backend optimized for modern creative workflows.</p>
+          </article>
+          <article class="glass-card rounded-[32px] border border-white/10 p-7 shadow-glow backdrop-blur-xl transition hover:-translate-y-1 hover:border-skyglow/40">
+            <span class="inline-flex rounded-2xl bg-slate-900/80 px-3 py-2 text-xs uppercase tracking-[0.28em] text-skyglow">Quality</span>
+            <h3 class="mt-5 text-2xl font-semibold text-white">High Resolution Output</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">Download crisp, print-ready artwork with premium output quality built for creative teams.</p>
+          </article>
+          <article class="glass-card rounded-[32px] border border-white/10 p-7 shadow-glow backdrop-blur-xl transition hover:-translate-y-1 hover:border-skyglow/40">
+            <span class="inline-flex rounded-2xl bg-slate-900/80 px-3 py-2 text-xs uppercase tracking-[0.28em] text-skyglow">Styles</span>
+            <h3 class="mt-5 text-2xl font-semibold text-white">Multiple Art Styles</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">Explore cinematic, natural, illustration, abstract, and custom styles from one interface.</p>
+          </article>
+          <article class="glass-card rounded-[32px] border border-white/10 p-7 shadow-glow backdrop-blur-xl transition hover:-translate-y-1 hover:border-skyglow/40">
+            <span class="inline-flex rounded-2xl bg-slate-900/80 px-3 py-2 text-xs uppercase tracking-[0.28em] text-skyglow">Storage</span>
+            <h3 class="mt-5 text-2xl font-semibold text-white">Secure Cloud Storage</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">Save and revisit your favorite images with secure, reliable storage built into the platform.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="space-y-10 py-10" id="gallery">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="section-label">Gallery</p>
+            <h2 class="text-4xl font-semibold text-white sm:text-5xl">A curated gallery of AI art</h2>
+          </div>
+          <p class="max-w-xl text-sm leading-7 text-slate-400">Hover to preview, then tap to expand the artwork in a lightbox for a closer look.</p>
+        </div>
+        <div class="masonry-grid">
+          <button type="button" data-lightbox="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" class="group overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/70 p-4 transition duration-500 hover:-translate-y-1 hover:border-cyanlight/40">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Futuristic city render" class="h-[340px] w-full rounded-[24px] object-cover transition duration-500 group-hover:scale-105" />
+            <div class="mt-4 text-left">
+              <p class="text-sm uppercase tracking-[0.25em] text-slate-400">Neon metropolis</p>
+            </div>
+          </button>
+          <button type="button" data-lightbox="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" class="group overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/70 p-4 transition duration-500 hover:-translate-y-1 hover:border-violetglow/40">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Dreamy landscape" class="h-[500px] w-full rounded-[24px] object-cover transition duration-500 group-hover:scale-105" />
+            <div class="mt-4 text-left">
+              <p class="text-sm uppercase tracking-[0.25em] text-slate-400">Dreamy landscape</p>
+            </div>
+          </button>
+          <button type="button" data-lightbox="https://images.unsplash.com/photo-1534278931827-7fdbcd4d3e99?auto=format&fit=crop&w=1200&q=80" class="group overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/70 p-4 transition duration-500 hover:-translate-y-1 hover:border-skyglow/40">
+            <img src="https://images.unsplash.com/photo-1534278931827-7fdbcd4d3e99?auto=format&fit=crop&w=600&q=80" alt="Abstract artwork" class="h-[420px] w-full rounded-[24px] object-cover transition duration-500 group-hover:scale-105" />
+            <div class="mt-4 text-left">
+              <p class="text-sm uppercase tracking-[0.25em] text-slate-400">Abstract art</p>
+            </div>
+          </button>
+          <button type="button" data-lightbox="https://images.unsplash.com/photo-1481277542470-605612bd2d61?auto=format&fit=crop&w=1200&q=80" class="group overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/70 p-4 transition duration-500 hover:-translate-y-1 hover:border-cyanlight/40">
+            <img src="https://images.unsplash.com/photo-1481277542470-605612bd2d61?auto=format&fit=crop&w=600&q=80" alt="Creative portrait" class="h-[280px] w-full rounded-[24px] object-cover transition duration-500 group-hover:scale-105" />
+            <div class="mt-4 text-left">
+              <p class="text-sm uppercase tracking-[0.25em] text-slate-400">Creative portrait</p>
+            </div>
+          </button>
+          <button type="button" data-lightbox="https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?auto=format&fit=crop&w=1200&q=80" class="group overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/70 p-4 transition duration-500 hover:-translate-y-1 hover:border-violetglow/40">
+            <img src="https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?auto=format&fit=crop&w=600&q=80" alt="Futuristic architecture" class="h-[380px] w-full rounded-[24px] object-cover transition duration-500 group-hover:scale-105" />
+            <div class="mt-4 text-left">
+              <p class="text-sm uppercase tracking-[0.25em] text-slate-400">Futuristic architecture</p>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <section class="space-y-10 py-10" id="pricing">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="section-label">Pricing</p>
+            <h2 class="text-4xl font-semibold text-white sm:text-5xl">Plans for every creator</h2>
+          </div>
+          <p class="max-w-xl text-sm leading-7 text-slate-400">Pick the right plan for your workflow, whether you're just getting started or building world-class experiences.</p>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-3">
+          <article class="glass-card rounded-[36px] border border-white/10 p-8 shadow-glow backdrop-blur-xl transition hover:-translate-y-1 hover:border-skyglow/40">
+            <p class="text-sm uppercase tracking-[0.28em] text-slate-400">Free</p>
+            <h3 class="mt-5 text-4xl font-semibold text-white">$0</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">Perfect for testing the platform and generating your first images.</p>
+            <ul class="mt-6 space-y-4 text-sm text-slate-300">
+              <li>5 free images per day</li>
+              <li>Standard style options</li>
+              <li>Community support</li>
+            </ul>
+            <button class="mt-8 w-full rounded-3xl border border-white/10 bg-slate-950/90 px-6 py-4 text-base font-semibold text-white transition hover:bg-slate-900">Start free</button>
+          </article>
+          <article class="glass-card relative rounded-[36px] border border-white/10 bg-gradient-to-br from-slate-950/80 via-slate-900/80 to-blackglass/90 p-8 shadow-glowStrong backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyanlight/40">
+            <div class="absolute -left-6 top-6 rounded-full bg-cyanlight/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-cyanlight">Most Popular</div>
+            <p class="text-sm uppercase tracking-[0.28em] text-slate-400">Pro</p>
+            <h3 class="mt-5 text-4xl font-semibold text-white">$19<span class="text-base font-medium text-slate-400">/mo</span></h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">Designed for creators who need premium output, speed, and automation.</p>
+            <ul class="mt-6 space-y-4 text-sm text-slate-300">
+              <li>Unlimited image generation</li>
+              <li>Advanced style presets</li>
+              <li>Priority support</li>
+            </ul>
+            <button class="mt-8 w-full rounded-3xl bg-gradient-to-r from-skyglow to-violetglow px-6 py-4 text-base font-semibold text-slate-950 transition hover:shadow-glowStrong">Choose Pro</button>
+          </article>
+          <article class="glass-card rounded-[36px] border border-white/10 p-8 shadow-glow backdrop-blur-xl transition hover:-translate-y-1 hover:border-violetglow/40">
+            <p class="text-sm uppercase tracking-[0.28em] text-slate-400">Enterprise</p>
+            <h3 class="mt-5 text-4xl font-semibold text-white">Custom</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">Custom plans for teams, studios, and enterprise workflows.</p>
+            <ul class="mt-6 space-y-4 text-sm text-slate-300">
+              <li>Team collaboration</li>
+              <li>Dedicated onboarding</li>
+              <li>Enterprise SLA</li>
+            </ul>
+            <button class="mt-8 w-full rounded-3xl border border-white/10 bg-slate-950/90 px-6 py-4 text-base font-semibold text-white transition hover:bg-slate-900">Contact sales</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="space-y-10 py-10" id="donate">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="section-label">Support Us</p>
+            <h2 class="text-4xl font-semibold text-white sm:text-5xl">Help us keep creating</h2>
+          </div>
+          <p class="max-w-xl text-sm leading-7 text-slate-400">Your support helps us continue developing amazing AI art generation tools for creators worldwide.</p>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-3">
+          <article class="glass-card rounded-[36px] border border-white/10 p-8 shadow-glow backdrop-blur-xl transition hover:-translate-y-1 hover:border-skyglow/40">
+            <span class="inline-flex rounded-2xl bg-slate-900/80 px-3 py-2 text-xs uppercase tracking-[0.28em] text-skyglow">One-time</span>
+            <h3 class="mt-5 text-2xl font-semibold text-white">One-Time Donation</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">Make a one-time contribution to support our mission.</p>
+            <div class="mt-8 space-y-3">
+              <button class="donate-amount-btn w-full rounded-2xl border border-white/10 bg-slate-950/90 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-900" data-amount="5">Donate $5</button>
+              <button class="donate-amount-btn w-full rounded-2xl border border-white/10 bg-slate-950/90 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-900" data-amount="10">Donate $10</button>
+              <button class="donate-amount-btn w-full rounded-2xl border border-white/10 bg-slate-950/90 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-900" data-amount="25">Donate $25</button>
+              <button class="w-full rounded-2xl border border-white/10 bg-slate-950/90 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-900" onclick="promptCustomAmount()">Custom Amount</button>
+            </div>
+          </article>
+          <article class="glass-card relative rounded-[36px] border border-white/10 bg-gradient-to-br from-slate-950/80 via-slate-900/80 to-blackglass/90 p-8 shadow-glowStrong backdrop-blur-xl transition hover:-translate-y-1 hover:border-violetglow/40">
+            <div class="absolute -left-6 top-6 rounded-full bg-violetglow/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-violetglow">Monthly Hero</div>
+            <span class="inline-flex rounded-2xl bg-slate-900/80 px-3 py-2 text-xs uppercase tracking-[0.28em] text-violetglow">Recurring</span>
+            <h3 class="mt-5 text-2xl font-semibold text-white">Monthly Supporter</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">Become a monthly supporter and help us sustain development.</p>
+            <div class="mt-8 space-y-3">
+              <button class="donate-monthly-btn w-full rounded-2xl bg-gradient-to-r from-violetglow to-skyglow px-6 py-3 text-sm font-semibold text-slate-950 transition hover:shadow-glowStrong" data-amount="5">$5/month</button>
+              <button class="donate-monthly-btn w-full rounded-2xl bg-gradient-to-r from-violetglow to-skyglow px-6 py-3 text-sm font-semibold text-slate-950 transition hover:shadow-glowStrong" data-amount="15">$15/month</button>
+              <button class="donate-monthly-btn w-full rounded-2xl bg-gradient-to-r from-violetglow to-skyglow px-6 py-3 text-sm font-semibold text-slate-950 transition hover:shadow-glowStrong" data-amount="50">$50/month</button>
+              <button class="w-full rounded-2xl bg-gradient-to-r from-violetglow to-skyglow px-6 py-3 text-sm font-semibold text-slate-950 transition hover:shadow-glowStrong" onclick="promptCustomMonthly()">Custom Monthly</button>
+            </div>
+          </article>
+          <article class="glass-card rounded-[36px] border border-white/10 p-8 shadow-glow backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyanlight/40">
+            <span class="inline-flex rounded-2xl bg-slate-900/80 px-3 py-2 text-xs uppercase tracking-[0.28em] text-cyanlight">Support</span>
+            <h3 class="mt-5 text-2xl font-semibold text-white">Other Ways to Help</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">Support us through our official channels and platforms.</p>
+            <div class="mt-8 space-y-3">
+              <button class="w-full rounded-2xl border border-white/10 bg-slate-950/90 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-900" onclick="openLink('https://ko-fi.com')">Ko-fi Support</button>
+              <button class="w-full rounded-2xl border border-white/10 bg-slate-950/90 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-900" onclick="openLink('https://patreon.com')">Patreon</button>
+              <button class="w-full rounded-2xl border border-white/10 bg-slate-950/90 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-900" onclick="openLink('https://buymeacoffee.com')">Buy Me a Coffee</button>
+              <button class="w-full rounded-2xl border border-white/10 bg-slate-950/90 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-900" onclick="openLink('mailto:donations@pixelforge.ai')">Direct Support</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="space-y-10 py-10">
+        <div class="grid gap-6 lg:grid-cols-[0.9fr_0.9fr]">
+          <div class="glass-card rounded-[32px] border border-white/10 p-8 shadow-glow backdrop-blur-xl">
+            <p class="section-label">Testimonials</p>
+            <h2 class="mt-4 text-4xl font-semibold text-white">Creators that trust PixelForge AI</h2>
+            <div class="mt-8 grid gap-5">
+              <article class="rounded-[28px] border border-white/10 bg-slate-950/80 p-6 shadow-glow transition hover:-translate-y-1">
+                <div class="flex items-center gap-4">
+                  <div class="grid h-14 w-14 place-items-center rounded-3xl bg-gradient-to-br from-skyglow to-violetglow text-slate-950">A</div>
+                  <div>
+                    <p class="font-semibold text-white">Ariana</p>
+                    <p class="text-sm text-slate-400">Creative Director</p>
+                  </div>
+                </div>
+                <div class="mt-5 flex items-center gap-1 text-amber-400">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-slate-300">"PixelForge feels like a design partner, not just a tool. The quality and speed are exceptional."</p>
+              </article>
+              <article class="rounded-[28px] border border-white/10 bg-slate-950/80 p-6 shadow-glow transition hover:-translate-y-1">
+                <div class="flex items-center gap-4">
+                  <div class="grid h-14 w-14 place-items-center rounded-3xl bg-gradient-to-br from-violetglow to-cyanlight text-slate-950">J</div>
+                  <div>
+                    <p class="font-semibold text-white">Jordan</p>
+                    <p class="text-sm text-slate-400">Product Lead</p>
+                  </div>
+                </div>
+                <div class="mt-5 flex items-center gap-1 text-amber-400">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-slate-300">"This UI feels premium from the first second. The output is clean, responsive, and reliable."</p>
+              </article>
+            </div>
+          </div>
+          <div class="glass-card rounded-[32px] border border-white/10 p-8 shadow-glow backdrop-blur-xl">
+            <p class="section-label">Statistics</p>
+            <h2 class="mt-4 text-4xl font-semibold text-white">Powering creator momentum</h2>
+            <div class="mt-10 grid gap-5 sm:grid-cols-2">
+              <div class="rounded-[28px] bg-slate-950/80 p-6 text-center border border-white/10">
+                <p class="text-5xl font-semibold text-white">1M+</p>
+                <p class="mt-3 text-sm text-slate-400">Images Generated</p>
+              </div>
+              <div class="rounded-[28px] bg-slate-950/80 p-6 text-center border border-white/10">
+                <p class="text-5xl font-semibold text-white">100K+</p>
+                <p class="mt-3 text-sm text-slate-400">Users worldwide</p>
+              </div>
+              <div class="rounded-[28px] bg-slate-950/80 p-6 text-center border border-white/10">
+                <p class="text-5xl font-semibold text-white">99.9%</p>
+                <p class="mt-3 text-sm text-slate-400">Uptime reliability</p>
+              </div>
+              <div class="rounded-[28px] bg-slate-950/80 p-6 text-center border border-white/10">
+                <p class="text-5xl font-semibold text-white">24/7</p>
+                <p class="mt-3 text-sm text-slate-400">Support access</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="border-t border-white/10 bg-slate-950/80 py-10">
+      <div class="mx-auto flex max-w-7xl flex-col gap-12 px-6 sm:px-8 lg:px-12 lg:flex-row lg:items-center lg:justify-between">
+        <div class="space-y-4">
+          <div class="inline-flex items-center gap-3">
+            <span class="grid h-12 w-12 place-items-center rounded-3xl bg-gradient-to-br from-skyglow to-violetglow text-slate-950">PF</span>
+            <p class="text-sm font-semibold text-white">PixelForge AI</p>
+          </div>
+          <p class="max-w-xl text-sm leading-7 text-slate-400">Futuristic AI image generation built for creative teams and visionary brands.</p>
+        </div>
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-10">
+          <div class="space-y-2 text-sm text-slate-400">
+            <p class="font-semibold text-white">Contact</p>
+            <a href="mailto:hello@pixelforge.ai" class="transition hover:text-white">hello@pixelforge.ai</a>
+          </div>
+          <div class="flex items-center gap-4 text-slate-400">
+            <a href="#" class="transition hover:text-white">Twitter</a>
+            <a href="#" class="transition hover:text-white">LinkedIn</a>
+            <a href="#" class="transition hover:text-white">Dribbble</a>
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="features" id="features">
-      <h2>Professional Features</h2>
-      <div class="feature-grid">
-        <div class="feature-item"><span>✅</span><p>Image generation</p></div>
-        <div class="feature-item"><span>✅</span><p>AI chatbot</p></div>
-        <div class="feature-item"><span>✅</span><p>Multiple image generation</p></div>
-        <div class="feature-item"><span>✅</span><p>Image upscaling</p></div>
-        <div class="feature-item"><span>✅</span><p>Image upscaling</p></div>
-        <div class="feature-item"><span>✅</span><p>Image editing</p></div>
-      </div>
-    </section>
-
-    <section class="proof" id="highlights">
-      <div class="proof-card">
-        <h3>Responsive mobile design</h3>
-        <p>Works beautifully on phones, tablets, and desktop screens.</p>
-      </div>
-      <div class="proof-card">
-        <h3>Dashboard experience</h3>
-        <p>Easy access to settings, history, and workflow tools.</p>
-      </div>
-      <div class="proof-card">
-        <h3>Complete page set</h3>
-        <p>Includes Contact, About, Terms, and Privacy landing pages.</p>
-      </div>
-    </section>
-
-    <footer class="footer" id="footer">
-      <div>
-        <span>© 2026 PixelForge AI</span>
-        <span>Built for creators who want professional visuals fast.</span>
-      </div>
-      <div>
-        <strong>Contact:</strong> Mustafa • <a href="tel:+9696499236">9696499236</a>
-      </div>
+      <div class="mt-10 border-t border-white/10 pt-6 text-center text-sm text-slate-500">© 2026 PixelForge AI. <a href="privacy.html" class="text-slate-300 hover:text-white">Privacy Policy</a> · <a href="terms.html" class="text-slate-300 hover:text-white">Terms of Service</a></div>
     </footer>
   </div>
+
+  <div class="lightbox-overlay hidden" id="lightboxOverlay" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button>
+    <img class="lightbox-image" id="lightboxImage" alt="Gallery preview" />
+  </div>
+
   <script src="script.js"></script>
 </body>
-</head>
 </html>

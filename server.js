@@ -4,16 +4,26 @@ import fs from "fs";
 import path from "path";
 import os from "os";
 import OpenAI from "openai";
+import { GoogleGenAI } from "@google/genai";
+import "dotenv/config";
 
 const app = express();
 const dataDir = path.resolve("data");
+const publicDir = path.resolve("public");
 const usersFile = path.join(dataDir, "users.json");
 const historyFile = path.join(dataDir, "history.json");
 const openai = process.env.OPENAI_API_KEY ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY }) : null;
+const geminiApiKey = process.env.GEMINI_API_KEY?.trim();
+const gemini = geminiApiKey ? new GoogleGenAI({ apiKey: geminiApiKey }) : null;
 
+app.disable("x-powered-by");
 app.use(cors());
-app.use(express.json());
-app.use(express.static("public"));
+app.use(express.json({ limit: "1mb" }));
+app.use(express.static(publicDir, { index: "index.html" }));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(publicDir, "index.html"));
+});
 
 function ensureDataFiles() {
   if (!fs.existsSync(dataDir)) {
@@ -156,42 +166,52 @@ function getFallbackChatReply(prompt) {
     return "I can help answer questions or suggest image prompts. Ask me anything!";
   }
   if (normalized.includes("hello") || normalized.includes("hi")) {
-    return "Hello! I can't access the OpenAI service right now, but I can still help with basic questions about the app.";
+    return "Hello! I can't access the Gemini service right now, but I can still help with basic questions about the app.";
   }
   if (normalized.includes("image")) {
     return "Tell me what kind of image you want, and I can suggest a good prompt or describe how to refine it.";
   }
   if (normalized.includes("help") || normalized.includes("support")) {
-    return "This chat is in fallback mode because the OpenAI API key is not configured. I can provide basic guidance about the app and image generation workflow.";
+    return "This chat is in fallback mode because the Gemini API key is not configured. I can provide basic guidance about the app and image generation workflow.";
   }
-  return `OpenAI is not available right now, but I can still help with your prompt: ${prompt}`;
+  return `Gemini is not available right now, but I can still help with your prompt: ${prompt}`;
 }
 
-app.post("/chat", async (req, res) => {
+async function handleChatRequest(req, res) {
   try {
     const { prompt } = req.body;
-    if (!prompt) {
+    const promptText = typeof prompt === "string" ? prompt.trim() : "";
+
+    if (!promptText) {
       return res.status(400).json({ success: false, error: "Prompt is required." });
     }
 
-    if (!openai) {
-      const reply = getFallbackChatReply(prompt);
-      return res.json({ success: true, reply, fallback: true });
+    if (promptText.length > 1000) {
+      return res.status(400).json({ success: false, error: "Prompt is too long." });
     }
 
-    const response = await openai.responses.create({
-      model: "gpt-3.5-turbo",
-      input: prompt,
-      max_tokens: 250,
-      temperature: 0.8
-    });
+    if (gemini) {
+      const response = await gemini.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents: `You are PixelForge AI, a helpful assistant for an AI image generation app. Respond clearly and concisely. User: ${promptText}`
+      });
+      const reply = response.text?.trim() || "I could not generate a response.";
+      return res.json({ success: true, reply, provider: "gemini" });
+    }
 
-    const reply = response.output[0]?.content?.map((item) => item.text).join("") || "I could not generate a response.";
-    res.json({ success: true, reply });
+    const reply = getFallbackChatReply(promptText);
+    return res.json({ success: true, reply, fallback: true, provider: "fallback" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ success: false, error: "Chat request failed." });
+    return res.status(500).json({ success: false, error: "Chat request failed." });
   }
+}
+
+app.post("/chat", handleChatRequest);
+app.post("/api/chat", handleChatRequest);
+
+app.get("/health", (req, res) => {
+  res.json({ success: true, status: "ok", geminiConfigured: Boolean(geminiApiKey) });
 });
 
 app.get("/history", (req, res) => {
@@ -218,4 +238,5 @@ app.get("/system", (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`PixelForge AI server running at http://localhost:${PORT}`);
+  console.log(`Gemini chat: ${geminiApiKey ? "enabled" : "using fallback"}`);
 });

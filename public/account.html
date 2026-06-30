@@ -12,7 +12,12 @@
   <div class="page">
     <header class="header">
       <a href="index.html" class="brand">PixelForge AI</a>
-      <nav class="nav" aria-label="Primary navigation">
+      <button id="navToggle" class="nav-toggle rounded-2xl border border-white/10 bg-slate-950/80 p-3 text-slate-300 transition hover:border-skyglow/40 hover:text-white lg:hidden" aria-label="Toggle navigation" aria-expanded="false">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <nav id="primaryNav" class="primary-nav hidden w-full flex-col gap-4 lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 text-sm text-slate-300" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="dashboard.html">Dashboard</a>
         <a href="chat.html">Chat</a>
